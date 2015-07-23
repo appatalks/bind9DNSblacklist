@@ -12,7 +12,7 @@
 DOMAIN=$1
 
 cat $1 | while read DOMAIN; do
-	echo "zone "$DOMAIN"  {type master; file "blockeddomain.hosts";};" >> /var/named/blacklist.zones
-	echo "zone "$DOMAIN"  {type master; file "blockeddomain.hosts";};"
+	echo "zone \"$DOMAIN\"  {type master; file \"blockeddomain.hosts\";};" >> /var/named/blacklist.zones
+	echo "zone \"$DOMAIN\"  {type master; file \"blockeddomain.hosts\";};"
 done
 service named restart
